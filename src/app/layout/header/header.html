@@ -2,40 +2,105 @@
   <div class="container">
     <div class="row g-0 align-items-center">
       <div class="col d-none d-lg-block">
-        <div class="d-flex justify-content-end align-items-center gap-4 pb-3 pe-4 border-bottom border-secondary">
+        <div
+          class="d-flex justify-content-end align-items-center gap-4 pb-3 pe-4 border-bottom border-secondary"
+        >
           <a href="#" class="link-light"><i class="bi bi-facebook"></i></a>
           <a href="#" class="link-light"><i class="bi bi-twitter-x"></i></a>
           <a href="#" class="link-light"><i class="bi bi-instagram"></i></a>
           <a href="#" class="link-light"><i class="bi bi-youtube"></i></a>
         </div>
         <ul class="nav justify-content-end gap-3 pt-3 pe-3">
-          <li class="nav-item"><a class="nav-link link-light px-2" [routerLink]="'/' | localize" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ 'nav.home' | transloco }}</a></li>
-          <li class="nav-item"><a class="nav-link link-light px-2" href="#">{{ 'nav.branches' | transloco }}</a></li>
-          <li class="nav-item"><a class="nav-link link-light px-2" href="#">{{ 'nav.about' | transloco }}</a></li>
+          <li class="nav-item">
+            <a class="nav-link link-light px-2" href="#"
+              >{{ 'nav.branches' | transloco }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light px-2" href="#"
+              >{{ 'nav.about' | transloco }}</a
+            >
+          </li>
         </ul>
       </div>
 
       <div class="col-auto px-lg-3">
-        <a [routerLink]="'/' | localize"><img src="assets/image/logo.png" height="110" [alt]="'app.name' | transloco" /></a>
+        <a [routerLink]="'/' | localize"
+          ><img
+            src="assets/image/logo.png"
+            height="110"
+            [alt]="'app.name' | transloco"
+        /></a>
       </div>
 
       <div class="col">
-        <div class="d-flex justify-content-end justify-content-lg-start align-items-center gap-4 pb-lg-3 ps-4 border-lg-bottom">
-          <a [routerLink]="'/login' | localize" class="nav-link link-light d-none d-lg-block">{{ 'nav.login' | transloco }}</a>
-          <a [routerLink]="'/register' | localize" class="nav-link link-light d-none d-lg-block">{{ 'nav.register' | transloco }}</a>
-          <a href="#" class="link-light" [attr.aria-label]="'nav.search' | transloco"><i class="bi bi-search"></i></a>
-          <nav class="lang-switch d-flex align-items-center gap-2 small" [attr.aria-label]="'nav.language' | transloco">
+        <div
+          class="d-flex justify-content-end justify-content-lg-start align-items-center gap-4 pb-lg-3 ps-4 border-lg-bottom"
+        >
+          <a
+            [routerLink]="'/login' | localize"
+            class="nav-link link-light d-none d-lg-block"
+            >{{ 'nav.login' | transloco }}</a
+          >
+          <a
+            [routerLink]="'/register' | localize"
+            class="nav-link link-light d-none d-lg-block"
+            >{{ 'nav.register' | transloco }}</a
+          >
+          <a
+            href="#"
+            class="link-light"
+            [attr.aria-label]="'nav.search' | transloco"
+            ><i class="bi bi-search"></i
+          ></a>
+          <nav
+            class="lang-switch d-flex align-items-center gap-2 small"
+            [attr.aria-label]="'nav.language' | transloco"
+          >
             @for (l of langLinks(); track l.code) {
-              <a class="link-light text-decoration-none" [class.active]="l.code === activeLang()" [attr.href]="l.href" [attr.hreflang]="l.code" [attr.lang]="l.code" [attr.title]="l.label" (click)="switchLang($event, l.code)">{{ l.code }}</a>
+            <a
+              class="link-light text-decoration-none"
+              [class.active]="l.code === activeLang()"
+              [attr.href]="l.href"
+              [attr.hreflang]="l.code"
+              [attr.lang]="l.code"
+              [attr.title]="l.label"
+              (click)="switchLang($event, l.code)"
+              >{{ l.code }}</a
+            >
             }
           </nav>
-          <a href="#" class="link-light fs-4 d-lg-none" [attr.aria-label]="'nav.menu' | transloco"><i class="bi bi-list"></i></a>
+          <a
+            href="#"
+            class="link-light fs-4 d-lg-none"
+            [attr.aria-label]="'nav.menu' | transloco"
+            ><i class="bi bi-list"></i
+          ></a>
         </div>
         <ul class="nav gap-3 pt-3 ps-3 d-none d-lg-flex">
-          <li class="nav-item"><a class="nav-link link-light px-2" href="#">{{ 'nav.gallery' | transloco }}</a></li>
-          <li class="nav-item"><a class="nav-link link-light px-2" href="#">{{ 'nav.contact' | transloco }}</a></li>
-          <li class="nav-item"><a class="nav-link link-light px-2" href="#">{{ 'nav.account' | transloco }}</a></li>
-          <li class="nav-item"><a class="nav-link link-light px-2 fs-5 lh-1" href="#" [attr.aria-label]="'nav.menu' | transloco"><i class="bi bi-list"></i></a></li>
+          <li class="nav-item">
+            <a class="nav-link link-light px-2" href="#"
+              >{{ 'nav.gallery' | transloco }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light px-2" href="#"
+              >{{ 'nav.contact' | transloco }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light px-2" href="#"
+              >{{ 'nav.account' | transloco }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link link-light px-2 fs-5 lh-1"
+              href="#"
+              [attr.aria-label]="'nav.menu' | transloco"
+              ><i class="bi bi-list"></i
+            ></a>
+          </li>
         </ul>
       </div>
     </div>

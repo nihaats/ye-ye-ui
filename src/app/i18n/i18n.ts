@@ -1,16 +1,15 @@
-import { DOCUMENT, isPlatformBrowser, PlatformLocation } from "@angular/common";
-import { inject, Injectable, PLATFORM_ID, REQUEST } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { CanActivateFn, CanMatchFn, NavigationEnd, RedirectFunction, Router, RouterStateSnapshot, TitleStrategy } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { provideTransloco, Translation, TranslocoLoader, TranslocoService } from "@jsverse/transloco";
 import { filter, firstValueFrom } from "rxjs";
+import { Lang, LangOption } from "../core/models/lang";
+import { SsrService } from "../core/ssr.service";
 
-export const LANGS = [
+export const LANGS: LangOption[] = [
   { code: "tr", label: "Türkçe" },
   { code: "en", label: "English" },
-] as const;
-
-export type Lang = (typeof LANGS)[number]["code"];
+];
 
 export const DEFAULT_LANG: Lang = "tr";
 
@@ -45,10 +44,6 @@ class TranslatedTitleStrategy extends TitleStrategy {
   }
 }
 
-function readCookie(cookies: string | null | undefined, name: string) {
-  return cookies?.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`))?.[1];
-}
-
 function fromAcceptLanguage(header: string | null | undefined) {
   return header
     ?.split(",")
@@ -58,16 +53,13 @@ function fromAcceptLanguage(header: string | null | undefined) {
 
 /** Kullanıcının dil seçicide yaptığı son tercih; sunucuda istek başlığından, tarayıcıda document.cookie'den okunur. */
 function preferredLang(): Lang | undefined {
-  const cookies = isPlatformBrowser(inject(PLATFORM_ID))
-    ? inject(DOCUMENT).cookie
-    : inject(REQUEST, { optional: true })?.headers.get("cookie");
-  const lang = readCookie(cookies, LANG_COOKIE);
+  const lang = inject(SsrService).getCookie(LANG_COOKIE);
   return isLang(lang) ? lang : undefined;
 }
 
 /** Yalnızca dil seçiciden çağrılır; bir linke tıklayıp başka dilde sayfa açmak tercihi değiştirmez. */
-export function savePreferredLang(document: Document, lang: Lang) {
-  document.cookie = `${LANG_COOKIE}=${lang}; path=/; max-age=31536000; samesite=lax`;
+export function savePreferredLang(ssr: SsrService, lang: Lang) {
+  ssr.setCookie(LANG_COOKIE, lang, { maxAge: 31536000 });
 }
 
 /** Aynı sayfanın başka dildeki adresi: /tr/cards?x=1 -> /en/cards?x=1 */
@@ -83,18 +75,19 @@ export function langUrl(router: Router, url: string, lang: Lang) {
  * Tarayıcıda çerez yoksa sunucunun bastığı <html lang> kullanılır ki hidrasyon aynı dille yapılsın.
  */
 function detectLang(): Lang {
+  const ssr = inject(SsrService);
   const cookie = preferredLang();
   if (cookie) return cookie;
 
-  const segment = inject(PlatformLocation).pathname.split("/")[1];
+  const segment = ssr.pathname.split("/")[1];
   if (isLang(segment)) return segment;
 
-  if (isPlatformBrowser(inject(PLATFORM_ID))) {
-    const htmlLang = inject(DOCUMENT).documentElement.lang;
+  if (ssr.isBrowser) {
+    const htmlLang = ssr.document.documentElement.lang;
     return isLang(htmlLang) ? htmlLang : DEFAULT_LANG;
   }
 
-  return fromAcceptLanguage(inject(REQUEST, { optional: true })?.headers.get("accept-language")) ?? DEFAULT_LANG;
+  return fromAcceptLanguage(ssr.getHeader("accept-language")) ?? DEFAULT_LANG;
 }
 
 /** Arama motorları için her dilin adresini ve sayfanın kanonik adresini <head> içine yazar. */
@@ -123,11 +116,8 @@ function updateAlternateLinks(document: Document, router: Router, origin: string
 /** Uygulama açılmadan önce dili belirleyip çevirileri yükler; böylece SSR ve hidrasyon aynı metni üretir. */
 export async function initI18n() {
   const transloco = inject(TranslocoService);
-  const document = inject(DOCUMENT);
+  const { document, origin } = inject(SsrService);
   const router = inject(Router);
-  const origin = isPlatformBrowser(inject(PLATFORM_ID))
-    ? document.location.origin
-    : new URL(inject(REQUEST, { optional: true })?.url ?? "http://localhost").origin;
 
   transloco.langChanges$.subscribe((lang) => (document.documentElement.lang = lang));
   router.events

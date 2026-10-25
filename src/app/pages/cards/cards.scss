@@ -102,14 +102,14 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .rating {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 800;
     font-size: u(150);
     line-height: 0.85;
   }
 
   .pos {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 700;
     font-size: u(46);
     letter-spacing: u(2);
@@ -149,7 +149,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     right: u(60);
     padding-bottom: u(12);
     border-bottom: u(3) solid rgba(60, 40, 5, 0.3);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 800;
     font-size: u(92);
     line-height: 1;
@@ -169,13 +169,13 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
 
     strong {
       width: u(80);
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: var(--ye-font-condensed);
       font-weight: 800;
       font-size: u(56);
     }
 
     span {
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: var(--ye-font-condensed);
       font-weight: 500;
       font-size: u(44);
     }
@@ -238,7 +238,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     right: u(30);
     padding: u(6) u(18);
     border-radius: u(30);
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     font-weight: 800;
     font-size: u(28);
     color: #1c1f2b;
@@ -263,7 +263,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .name {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--ye-font-poster);
     font-size: u(104);
     line-height: 1;
     color: #fff;
@@ -271,7 +271,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .pos {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 600;
     font-size: u(34);
     letter-spacing: u(8);
@@ -336,7 +336,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     height: u(126);
     clip-path: polygon(50% 0, 100% 15%, 100% 65%, 50% 100%, 0 65%, 0 15%);
     background: linear-gradient(160deg, $gold-1, $gold-2 50%, $gold-3);
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--ye-font-poster);
     font-size: u(64);
     color: #1a1305;
   }
@@ -358,7 +358,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
 
   .sign {
     display: block;
-    font-family: "Great Vibes", cursive;
+    font-family: var(--ye-font-script);
     font-size: u(130);
     line-height: 1;
     color: #f3d98c;
@@ -366,7 +366,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .cert {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 600;
     font-size: u(22);
     letter-spacing: u(6);
@@ -386,7 +386,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .name {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--ye-font-poster);
     font-size: u(90);
     line-height: 1;
     color: #fff;
@@ -394,7 +394,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .pos {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 700;
     font-size: u(32);
     letter-spacing: u(6);
@@ -426,7 +426,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     height: u(110);
     border-radius: 50%;
     background: linear-gradient(160deg, $gold-1, $gold-2 50%, $gold-3);
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--ye-font-poster);
     font-size: u(76);
     color: #1a1305;
   }
@@ -435,7 +435,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: u(14) u(40);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-size: u(32);
 
     span {
@@ -452,7 +452,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   .bars {
     display: grid;
     gap: u(18);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-size: u(32);
 
     .lbl {
@@ -482,7 +482,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .motto {
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     font-weight: 700;
     font-size: u(26);
     letter-spacing: u(6);
@@ -490,7 +490,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
   }
 
   .code {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-size: u(20);
     letter-spacing: u(2);
     color: #6c7789;
@@ -543,7 +543,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     width: u(110);
     height: u(64);
     border: u(2) solid $gold-2;
-    font-family: "Cinzel", serif;
+    font-family: var(--ye-font-serif);
     font-weight: 700;
     font-size: u(34);
     color: $gold-1;
@@ -566,7 +566,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     left: 0;
     right: 0;
     top: u(690);
-    font-family: "Cinzel", serif;
+    font-family: var(--ye-font-serif);
   }
 
   .first {
@@ -607,14 +607,14 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     }
 
     strong {
-      font-family: "Cinzel", serif;
+      font-family: var(--ye-font-serif);
       font-weight: 700;
       font-size: u(46);
       color: $gold-1;
     }
 
     span {
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: var(--ye-font-condensed);
       font-size: u(22);
       letter-spacing: u(3);
       color: #8a8478;
@@ -679,7 +679,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     left: u(50);
     top: u(690);
     transform: rotate(-5deg);
-    font-family: "Bungee", sans-serif;
+    font-family: var(--ye-font-retro);
     font-size: u(78);
     line-height: 0.95;
     color: #ffd21f;
@@ -696,7 +696,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     right: u(30);
     bottom: u(150);
     padding: u(10) u(60) u(10) u(30);
-    font-family: "Bungee", sans-serif;
+    font-family: var(--ye-font-retro);
     font-size: u(40);
     color: #fff;
     background: #1d2b5c;
@@ -709,7 +709,7 @@ $shield: polygon(0 7%, 14% 7%, 24% 1.5%, 50% 0, 76% 1.5%, 86% 7%, 100% 7%, 100% 
     right: u(50);
     bottom: u(50);
     gap: u(16);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-weight: 700;
     font-size: u(34);
     letter-spacing: u(3);
@@ -770,7 +770,7 @@ $octa: polygon(9% 0, 91% 0, 100% 6%, 100% 94%, 91% 100%, 9% 100%, 0 94%, 0 6%);
     top: u(70);
     left: u(60);
     color: #fff;
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     text-shadow: 0 0 u(18) rgba(120, 210, 255, 0.9);
   }
 
@@ -807,7 +807,7 @@ $octa: polygon(9% 0, 91% 0, 100% 6%, 100% 94%, 91% 100%, 9% 100%, 0 94%, 0 6%);
 
   .name {
     margin-bottom: u(18);
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     font-weight: 800;
     font-size: u(54);
     letter-spacing: u(4);
@@ -816,14 +816,14 @@ $octa: polygon(9% 0, 91% 0, 100% 6%, 100% 94%, 91% 100%, 9% 100%, 0 94%, 0 6%);
 
   .stats {
     strong {
-      font-family: "Orbitron", sans-serif;
+      font-family: var(--ye-font-digital);
       font-weight: 800;
       font-size: u(42);
       color: #8fdcff;
     }
 
     span {
-      font-family: "Barlow Condensed", sans-serif;
+      font-family: var(--ye-font-condensed);
       font-weight: 600;
       font-size: u(24);
       letter-spacing: u(2);

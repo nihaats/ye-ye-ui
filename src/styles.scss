@@ -7,7 +7,7 @@ html {
         primary: mat.$orange-palette,
         tertiary: mat.$yellow-palette,
       ),
-      typography: Roboto,
+      typography: var(--ye-font-body),
       density: 0,
     )
   );

@@ -173,7 +173,7 @@ $aspect-ratio-2: 1.475;
 .player-name span {
     display: block;
     margin-top: u(15);
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     font-size: u(32);
     font-weight: 800;
     letter-spacing: u(5);
@@ -204,7 +204,7 @@ $aspect-ratio-2: 1.475;
 
 
 .detail-item span {
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: var(--ye-font-condensed);
     font-size: u(34);
     font-weight: 700;
     letter-spacing: u(1);
@@ -291,7 +291,7 @@ $aspect-ratio-2: 1.475;
 .stat strong {
     margin-top: u(5);
 
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
 
     font-size: u(58);
     line-height: 1;
@@ -315,7 +315,7 @@ $aspect-ratio-2: 1.475;
     left: 0;
     width: 100%;
     text-align: center;
-    font-family: "Orbitron", sans-serif;
+    font-family: var(--ye-font-digital);
     font-size: u(25);
     font-weight: 700;
     letter-spacing: u(7);

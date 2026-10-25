@@ -3,7 +3,7 @@
 }
 
 .header {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--ye-font-heading);
   text-transform: uppercase;
 
   .nav-link.active {
