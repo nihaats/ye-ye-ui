@@ -1,0 +1,294 @@
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gx-4 gy-5">
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        1 · Altın Nadir
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard shadowed"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+        >
+          <div class="face gold">
+            <div class="frame">
+              <div class="meta d-flex flex-column align-items-center">
+                <span class="rating">{{ player.rating }}</span>
+                <span class="pos">{{ player.positionShort }}</span>
+                <span class="rule"></span>
+                <img class="flag" [src]="player.flag" alt="" />
+                <span class="rule"></span>
+                <img class="club" src="assets/image/logo.png" alt="" />
+              </div>
+              <img class="photo" [src]="player.photo" alt="" />
+              <div class="name text-center">{{ player.lastName }}</div>
+              <div class="stats">
+                @for (s of stats; track s.label) {
+                <div class="d-flex align-items-baseline">
+                  <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+                </div>
+                }
+              </div>
+              <img class="badge-logo" src="assets/image/logo.png" alt="" />
+            </div>
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        2 · Prizma Holo
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+        >
+          <div class="face prizm">
+            <div class="window">
+              <div class="shards"></div>
+              <img class="photo" [src]="player.photo" alt="" />
+              <img class="club" src="assets/image/logo.png" alt="" />
+              <span class="serial">{{ player.serial }}</span>
+              <div class="band d-flex flex-column justify-content-center">
+                <span class="name"
+                  >{{ player.firstName }} {{ player.lastName }}</span
+                >
+                <span class="pos"
+                  >{{ player.position }} · {{ player.country }}</span
+                >
+              </div>
+            </div>
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        3 · Krom Çaylak İmzalı
+        <span class="fw-normal text-lowercase">(çevirmek için tıkla)</span>
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+          (click)="chromeFlipped = !chromeFlipped"
+        >
+          <div class="flipper" [class.flipped]="chromeFlipped">
+            <div class="face chrome front">
+              <div class="window">
+                <img class="photo" [src]="player.photo" alt="" />
+                <div
+                  class="rc d-flex align-items-center justify-content-center"
+                >
+                  RC
+                </div>
+                <img class="club" src="assets/image/logo.png" alt="" />
+                <div class="autograph">
+                  <span class="sign">Ali Çelik</span>
+                  <span class="cert">ONAYLI İMZA</span>
+                </div>
+                <div class="plate d-flex flex-column justify-content-center">
+                  <span class="name"
+                    >{{ player.firstName }} {{ player.lastName }}</span
+                  >
+                  <span class="pos"
+                    >{{ player.position }} · #{{ player.number }}</span
+                  >
+                </div>
+              </div>
+              <div class="shine"></div>
+            </div>
+            <div class="face chrome back">
+              <div class="window d-flex flex-column">
+                <div class="d-flex align-items-center head">
+                  <span
+                    class="num d-flex align-items-center justify-content-center"
+                    >{{ player.number }}</span
+                  >
+                  <div class="d-flex flex-column">
+                    <span class="name"
+                      >{{ player.firstName }} {{ player.lastName }}</span
+                    >
+                    <span class="pos">{{ player.position }}</span>
+                  </div>
+                  <img
+                    class="club ms-auto"
+                    src="assets/image/logo.png"
+                    alt=""
+                  />
+                </div>
+                <div class="bio">
+                  <div class="d-flex justify-content-between">
+                    <span>ÜLKE</span><strong>{{ player.country }}</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>YAŞ</span><strong>{{ player.age }}</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>BOY</span><strong>{{ player.height }} M</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>AYAK</span><strong>{{ player.foot }}</strong>
+                  </div>
+                </div>
+                <div class="bars">
+                  @for (s of stats; track s.label) {
+                  <div class="d-flex align-items-center">
+                    <span class="lbl">{{ s.label }}</span>
+                    <div class="track flex-grow-1">
+                      <div class="fill" [style.width.%]="s.value"></div>
+                    </div>
+                    <strong>{{ s.value }}</strong>
+                  </div>
+                  }
+                </div>
+                <div class="motto mt-auto text-center">{{ player.motto }}</div>
+                <div class="d-flex justify-content-between code">
+                  <span>YY-0{{ player.number }}</span
+                  ><span>© 2026 YENİLMEZ YETENEKLER</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        4 · Obsidyen 1/1
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+        >
+          <div class="face obsidian">
+            <img class="club" src="assets/image/logo.png" alt="" />
+            <span class="one d-flex align-items-center justify-content-center"
+              >1/1</span
+            >
+            <img class="photo" [src]="player.photo" alt="" />
+            <div class="name text-center">
+              <span class="first d-block">{{ player.firstName }}</span>
+              <span class="last d-block">{{ player.lastName }}</span>
+              <span class="pos d-block"
+                >{{ player.position }} · {{ player.country }}</span
+              >
+            </div>
+            <div class="stats d-flex">
+              @for (s of stats; track s.label) {
+              <div class="flex-fill d-flex flex-column align-items-center">
+                <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+              </div>
+              }
+            </div>
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        5 · Retro 90'lar
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+        >
+          <div class="face retro">
+            <div class="window">
+              <img class="photo" [src]="player.photo" alt="" />
+            </div>
+            <div class="crest d-flex align-items-center justify-content-center">
+              <img src="assets/image/logo.png" alt="" />
+            </div>
+            <div class="name">
+              <span class="d-block">{{ player.firstName }}</span>
+              <span class="d-block">{{ player.lastName }}</span>
+            </div>
+            <div class="pennant">{{ player.position }}</div>
+            <div class="foot d-flex align-items-center">
+              <img [src]="player.flag" alt="" />
+              <span>{{ player.country }} · #{{ player.number }}</span>
+              <span class="ms-auto">'26</span>
+            </div>
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        6 · Elmas Kristal
+      </div>
+      <div class="slot mx-auto">
+        <div
+          class="tcard shadowed"
+          (pointermove)="tilt($event)"
+          (pointerleave)="resetTilt($event)"
+        >
+          <div class="face diamond">
+            <div class="window">
+              <div class="sparkles"></div>
+              <img class="photo" [src]="player.photo" alt="" />
+              <div class="meta d-flex flex-column">
+                <span class="rating">{{ player.rating }}</span>
+                <span class="pos">{{ player.positionShort }}</span>
+              </div>
+              <img class="club" src="assets/image/logo.png" alt="" />
+              <div class="glass">
+                <div class="name text-center">
+                  {{ player.firstName }} {{ player.lastName }}
+                </div>
+                <div class="stats d-flex">
+                  @for (s of stats; track s.label) {
+                  <div class="flex-fill d-flex flex-column align-items-center">
+                    <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div
+        class="text-center text-uppercase small fw-semibold text-secondary mb-3"
+      >
+        Mevcut Tasarım
+      </div>
+      <div class="slot mx-auto">
+        <ye-card></ye-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<section class="auth d-flex align-items-center justify-content-center px-3">
+  <div class="auth-card w-100 rounded-4 p-4 p-md-5">
+    <div class="text-center mb-4">
+      <img src="assets/image/logo.png" height="72" alt="Yenilmez Yetenekler" />
+      <h1 class="auth-title h3 text-uppercase mt-3 mb-1">Giriş Yap</h1>
+      <p class="text-white-50 mb-0">Hesabına giriş yap, yeteneğini sergile.</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="d-flex flex-column">
+      <mat-form-field appearance="outline">
+        <mat-label>E-posta</mat-label>
+        <mat-icon matPrefix>mail</mat-icon>
+        <input matInput type="email" formControlName="email" autocomplete="email" />
+        @if (form.controls.email.hasError("required")) {
+          <mat-error>E-posta zorunludur</mat-error>
+        } @else if (form.controls.email.hasError("email")) {
+          <mat-error>Geçerli bir e-posta girin</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Şifre</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input matInput [type]="hidePassword() ? 'password' : 'text'" formControlName="password" autocomplete="current-password" />
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword.set(!hidePassword())" [attr.aria-label]="hidePassword() ? 'Şifreyi göster' : 'Şifreyi gizle'">
+          <mat-icon>{{ hidePassword() ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        @if (form.controls.password.hasError("required")) {
+          <mat-error>Şifre zorunludur</mat-error>
+        }
+      </mat-form-field>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <mat-checkbox formControlName="remember">Beni hatırla</mat-checkbox>
+        <a href="#" class="auth-link small text-decoration-none">Şifremi unuttum</a>
+      </div>
+
+      <button mat-flat-button type="submit" class="w-100 py-4">Giriş Yap</button>
+
+      <p class="text-center text-white-50 small mt-4 mb-0">
+        Hesabın yok mu? <a routerLink="/register" class="auth-link fw-semibold text-decoration-none">Kayıt ol</a>
+      </p>
+    </form>
+  </div>
+</section>

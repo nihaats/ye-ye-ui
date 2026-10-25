@@ -1,0 +1,326 @@
+$design-width: 800;
+
+/* Tasarım en/boy oranları: 800x1120 ve 800x1180 */
+$aspect-ratio: 1.4;
+$aspect-ratio-2: 1.475;
+
+/* 1 tasarım pikselinin gerçek karşılığı.
+   cqw, :host üzerindeki container'ın genişliğine göre
+   çözülür; bu yüzden font-size dahil her yerde güvenlidir. */
+@function u($n) {
+    @return calc(#{$n} * (100cqw / #{$design-width}));
+}
+
+:host {
+    display: block;
+    container-type: inline-size;
+    width: 100%;
+}
+
+.player-card {
+    position: relative;
+    width: 100cqw;
+    // height: calc(100cqw * #{$aspect-ratio-2});
+    padding: 20px 0;
+    overflow: hidden;
+    color: #fff;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(30, 58, 255, 0.45), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(0, 200, 255, 0.25), transparent 25%),
+        radial-gradient(circle at 95% 85%, rgba(255, 0, 200, 0.28), transparent 30%),
+        linear-gradient(135deg, #060a18 0%, #090d24 45%, #09051c 100%);
+    clip-path: polygon(10% 0,
+            38% 0,
+            40% 1.5%,
+            60% 1.5%,
+            63% 0,
+            91% 0,
+            100% 8%,
+            100% 92%,
+            91% 100%,
+            10% 100%,
+            0 92%,
+            0 10%);
+    filter: drop-shadow(0 u(12) u(15) rgba(0, 0, 0, 0.4));
+}
+
+
+/* Neon dış çerçeve */
+
+.player-card::before {
+    content: "";
+    position: absolute;
+    inset: u(5);
+    z-index: 5;
+    pointer-events: none;
+    background:
+        linear-gradient(135deg,
+            #8d19ff,
+            #00d9ff 20%,
+            transparent 35%,
+            transparent 65%,
+            #ff00c8 82%,
+            #00d9ff);
+    clip-path: polygon(10% 0,
+            38% 0,
+            40% 1.5%,
+            60% 1.5%,
+            63% 0,
+            91% 0,
+            100% 8%,
+            100% 92%,
+            91% 100%,
+            10% 100%,
+            0 92%,
+            0 10%,
+            1.5% 10.5%,
+            11% 1.5%,
+            37% 1.5%,
+            39.5% 3%,
+            60.5% 3%,
+            63.5% 1.5%,
+            90% 1.5%,
+            98.5% 9%,
+            98.5% 91%,
+            90% 98.5%,
+            11% 98.5%,
+            1.5% 91%,
+            1.5% 10.5%);
+}
+
+
+/* İç çerçeve */
+
+.player-card::after {
+    content: "";
+    position: absolute;
+    inset: u(22);
+    z-index: 4;
+    pointer-events: none;
+    border: u(2) solid rgba(117, 112, 255, 0.75);
+    clip-path: polygon(12% 0,
+            39% 0,
+            41% 1.5%,
+            59% 1.5%,
+            61% 0,
+            89% 0,
+            100% 10%,
+            100% 90%,
+            89% 100%,
+            12% 100%,
+            0 90%,
+            0 10%);
+
+    box-shadow:
+        inset 0 0 u(15) rgba(0, 204, 255, 0.4),
+        0 0 u(12) rgba(255, 0, 204, 0.35);
+}
+
+
+/* Arka plan çizgileri */
+
+.card-background {
+    position: absolute;
+    inset: 0;
+    opacity: 0.7;
+    pointer-events: none;
+    background:
+        linear-gradient(130deg,
+            transparent 30%,
+            rgba(61, 76, 255, 0.3) 30.2%,
+            transparent 30.5%),
+        linear-gradient(155deg,
+            transparent 68%,
+            rgba(255, 0, 221, 0.55) 68.2%,
+            transparent 68.6%),
+        linear-gradient(115deg,
+            transparent 72%,
+            rgba(0, 220, 255, 0.35) 72.2%,
+            transparent 72.5%);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+
+.card-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================================
+       SOL BİLGİ ALANI
+    ========================================= */
+
+.logo {
+    height: u(180);
+    width: auto;
+}
+
+
+.player-name h1 {
+    margin: 0;
+    color: #f1f1f3;
+    font-size: u(78);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: u(-2);
+    text-transform: uppercase;
+}
+
+
+.player-name span {
+    display: block;
+    margin-top: u(15);
+    font-family: "Orbitron", sans-serif;
+    font-size: u(32);
+    font-weight: 800;
+    letter-spacing: u(5);
+    background: linear-gradient(90deg, #57e5ff, #ff5ee8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* =========================================
+       BİLGİLER
+    ========================================= */
+
+.player-details {
+    margin-top: u(25);
+    border-top: u(1) solid rgba(154, 85, 255, 0.35);
+}
+
+
+.detail-item {
+    min-height: u(90);
+    display: flex;
+    align-items: center;
+    gap: u(22);
+    border-bottom: u(1) solid rgba(82, 65, 153, 0.35);
+}
+
+
+.detail-item span {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: u(34);
+    font-weight: 700;
+    letter-spacing: u(1);
+    white-space: nowrap;
+}
+
+.player-image-col {
+    position: relative;
+}
+
+/* Görsel, sütunun (sol bilgi alanı kadar) tam yüksekliğini kaplar.
+   Genişlik otomatik olduğu için resim her ekranda kendi oranını korur. */
+.player-image-space {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.player-photo {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+
+/* =========================================
+       İSTATİSTİKLER
+    ========================================= */
+
+.stats {
+    position: relative;
+    z-index: 5;
+    // left: u(25);
+    // right: u(25);
+    // bottom: u(95);
+    height: u(170);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background:
+        linear-gradient(135deg, rgba(5, 19, 42, 0.97), rgba(5, 7, 23, 0.98));
+    border: u(1) solid rgba(74, 87, 255, 0.4);
+    border-radius: u(8);
+    box-shadow:
+        inset 0 0 u(25) rgba(38, 76, 255, 0.15),
+        0 u(-5) u(30) rgba(0, 0, 0, 0.25);
+}
+
+
+.stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stat:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: u(30);
+    bottom: u(30);
+    width: u(1);
+    background: linear-gradient(transparent,
+            rgba(184, 57, 255, 0.8),
+            transparent);
+}
+
+
+.stat-title {
+    font-size: u(27);
+    font-weight: 800;
+    letter-spacing: u(1);
+    color: #e8e8ef;
+}
+
+
+.stat strong {
+    margin-top: u(5);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: u(58);
+    line-height: 1;
+    font-weight: 800;
+
+    background: linear-gradient(180deg, #62efff, #a736ff, #f642e6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* =========================================
+       ALT BAŞLIK
+    ========================================= */
+
+.card-footer {
+    position: relative;
+    z-index: 5;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: u(25);
+    font-weight: 700;
+    letter-spacing: u(7);
+    background: linear-gradient(90deg, #50e9ff, #a8b5ff, #ff61e7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

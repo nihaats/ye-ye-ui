@@ -1,0 +1,39 @@
+<div class="banner carousel slide carousel-fade">
+  <div class="carousel-indicators">
+    @for (b of banners; track b.src; let i = $index) {
+    <button
+      type="button"
+      [class.active]="i === active()"
+      [attr.aria-label]="b.alt"
+      (click)="goTo(i)"
+    ></button>
+    }
+  </div>
+  <div class="carousel-inner h-100">
+    @for (b of banners; track b.src; let i = $index) {
+    <div class="carousel-item d-block h-100" [class.active]="i === active()">
+      <img
+        [src]="b.src"
+        class="d-block w-100 h-100 object-fit-cover"
+        [alt]="b.alt"
+      />
+    </div>
+    }
+  </div>
+  <button class="carousel-control-prev" type="button" (click)="prev()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Önceki</span>
+  </button>
+  <button class="carousel-control-next" type="button" (click)="next()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Sonraki</span>
+  </button>
+</div>
+
+<div class="container my-5">
+  <div class="row gy-4">
+    <div class="col-12 col-sm-6 col-lg-4 col-xxl-5 text-center">
+      <ye-card></ye-card>
+    </div>
+  </div>
+</div>
