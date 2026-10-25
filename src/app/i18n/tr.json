@@ -1,0 +1,126 @@
+{
+  "app": {
+    "name": "Yenilmez Yetenekler"
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "cards": "Kartlar",
+    "branches": "Branşlar",
+    "about": "Hakkımızda",
+    "gallery": "Galeri",
+    "contact": "İletişim",
+    "account": "Hesabım",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "search": "Ara",
+    "menu": "Menü",
+    "language": "Dil seçimi"
+  },
+  "home": {
+    "prev": "Önceki",
+    "next": "Sonraki"
+  },
+  "branches": {
+    "football": "Futbol",
+    "basketball": "Basketbol",
+    "swimming": "Yüzme"
+  },
+  "auth": {
+    "showPassword": "Şifreyi göster",
+    "hidePassword": "Şifreyi gizle",
+    "fields": {
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "branch": "Branş",
+      "password": "Şifre",
+      "confirmPassword": "Şifre Tekrar"
+    },
+    "errors": {
+      "firstNameRequired": "Ad zorunludur",
+      "lastNameRequired": "Soyad zorunludur",
+      "emailRequired": "E-posta zorunludur",
+      "emailInvalid": "Geçerli bir e-posta girin",
+      "phoneInvalid": "Geçerli bir telefon girin",
+      "branchRequired": "Branş seçin",
+      "passwordRequired": "Şifre zorunludur",
+      "passwordMinLength": "En az {{min}} karakter olmalı",
+      "confirmPasswordRequired": "Şifre tekrarı zorunludur",
+      "passwordMismatch": "Şifreler eşleşmiyor"
+    },
+    "login": {
+      "title": "Giriş Yap",
+      "subtitle": "Hesabına giriş yap, yeteneğini sergile.",
+      "remember": "Beni hatırla",
+      "forgotPassword": "Şifremi unuttum",
+      "submit": "Giriş Yap",
+      "noAccount": "Hesabın yok mu?",
+      "registerLink": "Kayıt ol"
+    },
+    "register": {
+      "title": "Kayıt Ol",
+      "subtitle": "Aramıza katıl, yeteneğini keşfettir.",
+      "termsBefore": "",
+      "termsLink": "Kullanım koşullarını",
+      "termsAfter": " okudum ve kabul ediyorum",
+      "termsRequired": "Devam etmek için koşulları kabul edin",
+      "submit": "Kayıt Ol",
+      "haveAccount": "Zaten hesabın var mı?",
+      "loginLink": "Giriş yap"
+    }
+  },
+  "player": {
+    "ageValue": "{{value}} YAŞ",
+    "positions": {
+      "defender": "DEFANS"
+    },
+    "positionsShort": {
+      "defender": "DEF"
+    },
+    "foot": {
+      "right": "SAĞ AYAK",
+      "left": "SOL AYAK"
+    },
+    "countries": {
+      "tr": "TÜRKİYE"
+    },
+    "stats": {
+      "short": {
+        "pace": "HIZ",
+        "shooting": "ŞUT",
+        "passing": "PAS",
+        "dribbling": "DRİ",
+        "defending": "DEF",
+        "physical": "FİZ"
+      },
+      "long": {
+        "pace": "HIZ",
+        "shooting": "ŞUT",
+        "passing": "PAS",
+        "dribbling": "DRİBLİNG",
+        "defending": "SAVUNMA",
+        "physical": "FİZİK"
+      }
+    },
+    "bio": {
+      "country": "ÜLKE",
+      "age": "YAŞ",
+      "height": "BOY",
+      "foot": "AYAK"
+    },
+    "certifiedAutograph": "ONAYLI İMZA"
+  },
+  "cards": {
+    "clickToFlip": "(çevirmek için tıkla)",
+    "variants": {
+      "gold": "Altın Nadir",
+      "prizm": "Prizma Holo",
+      "chrome": "Krom Çaylak İmzalı",
+      "obsidian": "Obsidyen 1/1",
+      "retro": "Retro 90'lar",
+      "diamond": "Elmas Kristal",
+      "current": "Mevcut Tasarım"
+    }
+  }
+}

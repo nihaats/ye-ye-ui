@@ -17,18 +17,18 @@
 
               <div class="player-name">
                 <h1>ALİ<br />ÇELİK</h1>
-                <span>DEFANS</span>
+                <span>{{ 'player.positions.defender' | transloco }}</span>
               </div>
 
               <div class="player-details">
                 <div class="detail-item">
                   <div class="col-3 icon flag">🇹🇷</div>
-                  <span>TÜRKİYE</span>
+                  <span>{{ 'player.countries.tr' | transloco }}</span>
                 </div>
 
                 <div class="detail-item">
                   <div class="col-3 icon">▣</div>
-                  <span>19 YAŞ</span>
+                  <span>{{ 'player.ageValue' | transloco: { value: 19 } }}</span>
                 </div>
 
                 <div class="detail-item">
@@ -38,7 +38,7 @@
 
                 <div class="detail-item">
                   <div class="col-3 icon">◉</div>
-                  <span>SAĞ AYAK</span>
+                  <span>{{ 'player.foot.right' | transloco }}</span>
                 </div>
               </div>
             </div>
@@ -60,27 +60,27 @@
       <!-- İstatistikler -->
       <div class="stats">
         <div class="stat">
-          <span class="stat-title">HIZ</span>
+          <span class="stat-title">{{ 'player.stats.long.pace' | transloco }}</span>
           <strong>82</strong>
         </div>
 
         <div class="stat">
-          <span class="stat-title">ŞUT</span>
+          <span class="stat-title">{{ 'player.stats.long.shooting' | transloco }}</span>
           <strong>60</strong>
         </div>
 
         <div class="stat">
-          <span class="stat-title">PAS</span>
+          <span class="stat-title">{{ 'player.stats.long.passing' | transloco }}</span>
           <strong>76</strong>
         </div>
 
         <div class="stat">
-          <span class="stat-title">DRİBLİNG</span>
+          <span class="stat-title">{{ 'player.stats.long.dribbling' | transloco }}</span>
           <strong>72</strong>
         </div>
 
         <div class="stat">
-          <span class="stat-title">FİZİK</span>
+          <span class="stat-title">{{ 'player.stats.long.physical' | transloco }}</span>
           <strong>90</strong>
         </div>
       </div>

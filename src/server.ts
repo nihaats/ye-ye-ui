@@ -41,9 +41,14 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+      if (!response) return next();
+      // Sayfalar `lang` çerezine göre yönlendirilir, ön eksiz adresler Accept-Language'a da bakar.
+      // Önbellekler (CDN/proxy) farklı dildeki yanıtları karıştırmasın diye bunu Vary ile bildiriyoruz.
+      response.headers.append('Vary', 'Cookie');
+      if (!/^\/[a-z]{2}(\/|$)/.test(req.path)) response.headers.append('Vary', 'Accept-Language');
+      return writeResponseToNodeResponse(response, res);
+    })
     .catch(next);
 });
 

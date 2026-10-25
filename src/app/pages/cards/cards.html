@@ -4,7 +4,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        1 · Altın Nadir
+        1 · {{ 'cards.variants.gold' | transloco }}
       </div>
       <div class="slot mx-auto">
         <div
@@ -16,7 +16,7 @@
             <div class="frame">
               <div class="meta d-flex flex-column align-items-center">
                 <span class="rating">{{ player.rating }}</span>
-                <span class="pos">{{ player.positionShort }}</span>
+                <span class="pos">{{ 'player.positionsShort.' + player.position | transloco }}</span>
                 <span class="rule"></span>
                 <img class="flag" [src]="player.flag" alt="" />
                 <span class="rule"></span>
@@ -25,9 +25,9 @@
               <img class="photo" [src]="player.photo" alt="" />
               <div class="name text-center">{{ player.lastName }}</div>
               <div class="stats">
-                @for (s of stats; track s.label) {
+                @for (s of stats; track s.key) {
                 <div class="d-flex align-items-baseline">
-                  <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+                  <strong>{{ s.value }}</strong><span>{{ 'player.stats.short.' + s.key | transloco }}</span>
                 </div>
                 }
               </div>
@@ -43,7 +43,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        2 · Prizma Holo
+        2 · {{ 'cards.variants.prizm' | transloco }}
       </div>
       <div class="slot mx-auto">
         <div
@@ -62,7 +62,7 @@
                   >{{ player.firstName }} {{ player.lastName }}</span
                 >
                 <span class="pos"
-                  >{{ player.position }} · {{ player.country }}</span
+                  >{{ 'player.positions.' + player.position | transloco }} · {{ 'player.countries.' + player.country | transloco }}</span
                 >
               </div>
             </div>
@@ -76,8 +76,8 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        3 · Krom Çaylak İmzalı
-        <span class="fw-normal text-lowercase">(çevirmek için tıkla)</span>
+        3 · {{ 'cards.variants.chrome' | transloco }}
+        <span class="fw-normal text-lowercase">{{ 'cards.clickToFlip' | transloco }}</span>
       </div>
       <div class="slot mx-auto">
         <div
@@ -98,14 +98,14 @@
                 <img class="club" src="assets/image/logo.png" alt="" />
                 <div class="autograph">
                   <span class="sign">Ali Çelik</span>
-                  <span class="cert">ONAYLI İMZA</span>
+                  <span class="cert">{{ 'player.certifiedAutograph' | transloco }}</span>
                 </div>
                 <div class="plate d-flex flex-column justify-content-center">
                   <span class="name"
                     >{{ player.firstName }} {{ player.lastName }}</span
                   >
                   <span class="pos"
-                    >{{ player.position }} · #{{ player.number }}</span
+                    >{{ 'player.positions.' + player.position | transloco }} · #{{ player.number }}</span
                   >
                 </div>
               </div>
@@ -122,7 +122,7 @@
                     <span class="name"
                       >{{ player.firstName }} {{ player.lastName }}</span
                     >
-                    <span class="pos">{{ player.position }}</span>
+                    <span class="pos">{{ 'player.positions.' + player.position | transloco }}</span>
                   </div>
                   <img
                     class="club ms-auto"
@@ -132,22 +132,22 @@
                 </div>
                 <div class="bio">
                   <div class="d-flex justify-content-between">
-                    <span>ÜLKE</span><strong>{{ player.country }}</strong>
+                    <span>{{ 'player.bio.country' | transloco }}</span><strong>{{ 'player.countries.' + player.country | transloco }}</strong>
                   </div>
                   <div class="d-flex justify-content-between">
-                    <span>YAŞ</span><strong>{{ player.age }}</strong>
+                    <span>{{ 'player.bio.age' | transloco }}</span><strong>{{ player.age }}</strong>
                   </div>
                   <div class="d-flex justify-content-between">
-                    <span>BOY</span><strong>{{ player.height }} M</strong>
+                    <span>{{ 'player.bio.height' | transloco }}</span><strong>{{ player.height }} M</strong>
                   </div>
                   <div class="d-flex justify-content-between">
-                    <span>AYAK</span><strong>{{ player.foot }}</strong>
+                    <span>{{ 'player.bio.foot' | transloco }}</span><strong>{{ 'player.foot.' + player.foot | transloco }}</strong>
                   </div>
                 </div>
                 <div class="bars">
-                  @for (s of stats; track s.label) {
+                  @for (s of stats; track s.key) {
                   <div class="d-flex align-items-center">
-                    <span class="lbl">{{ s.label }}</span>
+                    <span class="lbl">{{ 'player.stats.short.' + s.key | transloco }}</span>
                     <div class="track flex-grow-1">
                       <div class="fill" [style.width.%]="s.value"></div>
                     </div>
@@ -171,7 +171,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        4 · Obsidyen 1/1
+        4 · {{ 'cards.variants.obsidian' | transloco }}
       </div>
       <div class="slot mx-auto">
         <div
@@ -189,13 +189,13 @@
               <span class="first d-block">{{ player.firstName }}</span>
               <span class="last d-block">{{ player.lastName }}</span>
               <span class="pos d-block"
-                >{{ player.position }} · {{ player.country }}</span
+                >{{ 'player.positions.' + player.position | transloco }} · {{ 'player.countries.' + player.country | transloco }}</span
               >
             </div>
             <div class="stats d-flex">
-              @for (s of stats; track s.label) {
+              @for (s of stats; track s.key) {
               <div class="flex-fill d-flex flex-column align-items-center">
-                <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+                <strong>{{ s.value }}</strong><span>{{ 'player.stats.short.' + s.key | transloco }}</span>
               </div>
               }
             </div>
@@ -209,7 +209,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        5 · Retro 90'lar
+        5 · {{ 'cards.variants.retro' | transloco }}
       </div>
       <div class="slot mx-auto">
         <div
@@ -228,10 +228,10 @@
               <span class="d-block">{{ player.firstName }}</span>
               <span class="d-block">{{ player.lastName }}</span>
             </div>
-            <div class="pennant">{{ player.position }}</div>
+            <div class="pennant">{{ 'player.positions.' + player.position | transloco }}</div>
             <div class="foot d-flex align-items-center">
               <img [src]="player.flag" alt="" />
-              <span>{{ player.country }} · #{{ player.number }}</span>
+              <span>{{ 'player.countries.' + player.country | transloco }} · #{{ player.number }}</span>
               <span class="ms-auto">'26</span>
             </div>
             <div class="shine"></div>
@@ -244,7 +244,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        6 · Elmas Kristal
+        6 · {{ 'cards.variants.diamond' | transloco }}
       </div>
       <div class="slot mx-auto">
         <div
@@ -258,7 +258,7 @@
               <img class="photo" [src]="player.photo" alt="" />
               <div class="meta d-flex flex-column">
                 <span class="rating">{{ player.rating }}</span>
-                <span class="pos">{{ player.positionShort }}</span>
+                <span class="pos">{{ 'player.positionsShort.' + player.position | transloco }}</span>
               </div>
               <img class="club" src="assets/image/logo.png" alt="" />
               <div class="glass">
@@ -266,9 +266,9 @@
                   {{ player.firstName }} {{ player.lastName }}
                 </div>
                 <div class="stats d-flex">
-                  @for (s of stats; track s.label) {
+                  @for (s of stats; track s.key) {
                   <div class="flex-fill d-flex flex-column align-items-center">
-                    <strong>{{ s.value }}</strong><span>{{ s.label }}</span>
+                    <strong>{{ s.value }}</strong><span>{{ 'player.stats.short.' + s.key | transloco }}</span>
                   </div>
                   }
                 </div>
@@ -284,7 +284,7 @@
       <div
         class="text-center text-uppercase small fw-semibold text-secondary mb-3"
       >
-        Mevcut Tasarım
+        {{ 'cards.variants.current' | transloco }}
       </div>
       <div class="slot mx-auto">
         <ye-card></ye-card>

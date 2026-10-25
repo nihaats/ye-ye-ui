@@ -6,9 +6,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { RouterLink } from "@angular/router";
+import { TranslocoPipe } from "@jsverse/transloco";
+import { LocalizePipe } from "../../../i18n/localize.pipe";
 
 @Component({
-  imports: [ReactiveFormsModule, RouterLink, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule],
+  imports: [ReactiveFormsModule, RouterLink, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, TranslocoPipe, LocalizePipe],
   selector: "app-login",
   styleUrl: "../auth.scss",
   templateUrl: "./login.html",

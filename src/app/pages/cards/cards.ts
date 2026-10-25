@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
+import { TranslocoPipe } from "@jsverse/transloco";
 import { YeCard } from "../../shared/ye-card/ye-card";
 
 @Component({
-  imports: [YeCard],
+  imports: [YeCard, TranslocoPipe],
   selector: "app-cards",
   styleUrl: "./cards.scss",
   templateUrl: "./cards.html",
@@ -11,15 +12,14 @@ export class Cards {
   player = {
     firstName: "ALİ",
     lastName: "ÇELİK",
-    position: "DEFANS",
-    positionShort: "DEF",
+    position: "defender",
     rating: 84,
     number: 4,
-    country: "TÜRKİYE",
+    country: "tr",
     flag: "https://flagcdn.com/w80/tr.png",
     age: 19,
     height: "1.88",
-    foot: "SAĞ AYAK",
+    foot: "right",
     motto: "SAVUNMANIN KALESİ",
     serial: "07/25",
     photo:
@@ -27,12 +27,12 @@ export class Cards {
   };
 
   stats = [
-    { label: "HIZ", value: 82 },
-    { label: "ŞUT", value: 60 },
-    { label: "PAS", value: 76 },
-    { label: "DRİ", value: 72 },
-    { label: "DEF", value: 88 },
-    { label: "FİZ", value: 90 },
+    { key: "pace", value: 82 },
+    { key: "shooting", value: 60 },
+    { key: "passing", value: 76 },
+    { key: "dribbling", value: 72 },
+    { key: "defending", value: 88 },
+    { key: "physical", value: 90 },
   ];
 
   chromeFlipped = false;

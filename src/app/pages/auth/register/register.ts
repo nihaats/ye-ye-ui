@@ -7,13 +7,15 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { RouterLink } from "@angular/router";
+import { TranslocoPipe } from "@jsverse/transloco";
+import { LocalizePipe } from "../../../i18n/localize.pipe";
 
 function passwordsMatch(group: AbstractControl): ValidationErrors | null {
   return group.get("password")?.value === group.get("confirmPassword")?.value ? null : { passwordMismatch: true };
 }
 
 @Component({
-  imports: [ReactiveFormsModule, RouterLink, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, RouterLink, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, TranslocoPipe, LocalizePipe],
   selector: "app-register",
   styleUrl: "../auth.scss",
   templateUrl: "./register.html",
@@ -21,7 +23,7 @@ function passwordsMatch(group: AbstractControl): ValidationErrors | null {
 export class Register {
   hidePassword = signal(true);
 
-  branches = ["Futbol", "Basketbol", "Yüzme"];
+  branches = ["football", "basketball", "swimming"];
 
   form = inject(FormBuilder).nonNullable.group(
     {

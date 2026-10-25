@@ -1,0 +1,126 @@
+{
+  "app": {
+    "name": "Yenilmez Yetenekler"
+  },
+  "nav": {
+    "home": "Home",
+    "cards": "Cards",
+    "branches": "Sports",
+    "about": "About Us",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "account": "My Account",
+    "login": "Sign In",
+    "register": "Sign Up",
+    "search": "Search",
+    "menu": "Menu",
+    "language": "Language"
+  },
+  "home": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "branches": {
+    "football": "Football",
+    "basketball": "Basketball",
+    "swimming": "Swimming"
+  },
+  "auth": {
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "branch": "Sport",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "errors": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email",
+      "phoneInvalid": "Enter a valid phone number",
+      "branchRequired": "Select a sport",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Must be at least {{min}} characters",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "login": {
+      "title": "Sign In",
+      "subtitle": "Sign in to your account and show your talent.",
+      "remember": "Remember me",
+      "forgotPassword": "Forgot password",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Sign up"
+    },
+    "register": {
+      "title": "Sign Up",
+      "subtitle": "Join us and get your talent discovered.",
+      "termsBefore": "I have read and accept the ",
+      "termsLink": "terms of use",
+      "termsAfter": "",
+      "termsRequired": "Please accept the terms to continue",
+      "submit": "Sign Up",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in"
+    }
+  },
+  "player": {
+    "ageValue": "AGE {{value}}",
+    "positions": {
+      "defender": "DEFENDER"
+    },
+    "positionsShort": {
+      "defender": "DEF"
+    },
+    "foot": {
+      "right": "RIGHT FOOT",
+      "left": "LEFT FOOT"
+    },
+    "countries": {
+      "tr": "TÜRKİYE"
+    },
+    "stats": {
+      "short": {
+        "pace": "PAC",
+        "shooting": "SHO",
+        "passing": "PAS",
+        "dribbling": "DRI",
+        "defending": "DEF",
+        "physical": "PHY"
+      },
+      "long": {
+        "pace": "PACE",
+        "shooting": "SHOOTING",
+        "passing": "PASSING",
+        "dribbling": "DRIBBLING",
+        "defending": "DEFENDING",
+        "physical": "PHYSICAL"
+      }
+    },
+    "bio": {
+      "country": "COUNTRY",
+      "age": "AGE",
+      "height": "HEIGHT",
+      "foot": "FOOT"
+    },
+    "certifiedAutograph": "CERTIFIED AUTOGRAPH"
+  },
+  "cards": {
+    "clickToFlip": "(click to flip)",
+    "variants": {
+      "gold": "Gold Rare",
+      "prizm": "Prizm Holo",
+      "chrome": "Chrome Rookie Autograph",
+      "obsidian": "Obsidian 1/1",
+      "retro": "Retro '90s",
+      "diamond": "Diamond Crystal",
+      "current": "Current Design"
+    }
+  }
+}

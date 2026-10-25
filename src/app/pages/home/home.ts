@@ -1,16 +1,17 @@
 import { afterNextRender, Component, DestroyRef, inject, signal } from "@angular/core";
+import { TranslocoPipe } from "@jsverse/transloco";
 import { YeCard } from "../../shared/ye-card/ye-card";
 @Component({
-  imports: [YeCard],
+  imports: [YeCard, TranslocoPipe],
   selector: "app-home",
   styleUrl: "./home.scss",
   templateUrl: "./home.html",
 })
 export class Home {
   banners = [
-    { src: "assets/banner/football1.png", alt: "Futbol" },
-    { src: "assets/banner/basketball1.png", alt: "Basketbol" },
-    { src: "assets/banner/swimming1.png", alt: "Yüzme" },
+    { src: "assets/banner/football1.png", alt: "branches.football" },
+    { src: "assets/banner/basketball1.png", alt: "branches.basketball" },
+    { src: "assets/banner/swimming1.png", alt: "branches.swimming" },
   ];
 
   active = signal(0);

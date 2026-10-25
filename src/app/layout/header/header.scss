@@ -20,6 +20,15 @@
     // }
   }
 
+  .lang-switch a {
+    opacity: 0.5;
+
+    &.active,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   @media (min-width: 992px) {
     .border-lg-bottom {
       border-bottom: var(--bs-border-width) solid var(--bs-secondary);

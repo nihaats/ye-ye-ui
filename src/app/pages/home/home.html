@@ -4,7 +4,7 @@
     <button
       type="button"
       [class.active]="i === active()"
-      [attr.aria-label]="b.alt"
+      [attr.aria-label]="b.alt | transloco"
       (click)="goTo(i)"
     ></button>
     }
@@ -15,18 +15,18 @@
       <img
         [src]="b.src"
         class="d-block w-100 h-100 object-fit-cover"
-        [alt]="b.alt"
+        [alt]="b.alt | transloco"
       />
     </div>
     }
   </div>
   <button class="carousel-control-prev" type="button" (click)="prev()">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Önceki</span>
+    <span class="visually-hidden">{{ 'home.prev' | transloco }}</span>
   </button>
   <button class="carousel-control-next" type="button" (click)="next()">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Sonraki</span>
+    <span class="visually-hidden">{{ 'home.next' | transloco }}</span>
   </button>
 </div>
 
